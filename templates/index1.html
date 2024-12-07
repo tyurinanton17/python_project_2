@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Маршрут</title>
+</head>
+<body>
+    <h1>Введите координаты мест</h1>
+    <form action="/process" method="get">
+        <fieldset>
+            <legend>Начальная точка</legend>
+            <label for="start_latitude">Широта:</label>
+            <input type="text" id="start_latitude" name="start_latitude" required>
+
+            <label for="start_longitude">Долгота:</label>
+            <input type="text" id="start_longitude" name="start_longitude" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Конечная точка</legend>
+            <label for="end_latitude">Широта:</label>
+            <input type="text" id="end_latitude" name="end_latitude" required>
+
+            <label for="end_longitude">Долгота:</label>
+            <input type="text" id="end_longitude" name="end_longitude" required>
+        </fieldset>
+
+        <input type="submit" value="Посмотреть погоду">
+    </form>
+</body>
+</html>

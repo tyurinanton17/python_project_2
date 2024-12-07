@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода сейчас</title>
+</head>
+<body>
+    <h1>Погода сейчас</h1>
+    {% if error %}
+        <p style="color: red;">Ошибка: {{ error }}</p>
+    {% else %}
+        <div>
+            <h3>Начальная точка ({{ start_latitude }}, {{ start_longitude }}):</h3>
+            <p>Температура: {{ start_weather.t }}</p>
+            <p>Скорость ветра: {{ start_weather.s }}</p>
+            <p>Влажность: {{ start_weather.h }}</p>
+            <p>Рекомендация:
+                {% if not start_weather.bad_weather %}
+                    Иди погуляй! Хватит сидеть уже за своим питоном.
+                {% else %}
+                    Сиди дома, на улице плохо.
+                {% endif %}
+            </p>
+        </div>
+
+        <div>
+            <h3>Конечная точка ({{ end_latitude }}, {{ end_longitude }}):</h3>
+            <p>Температура: {{ end_weather.t }}</p>
+            <p>Скорость ветра: {{ end_weather.s }}</p>
+            <p>Влажность: {{ end_weather.h }}</p>
+            <p>Рекомендация:
+                {% if not end_weather.bad_weather %}
+                    Иди погуляй! Хватит сидеть уже за своим питоном.
+                {% else %}
+                    Сиди дома, на улице плохо.
+                {% endif %}
+            </p>
+        </div>
+    {% endif %}
+</body>
+</html>
